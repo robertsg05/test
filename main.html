@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Знаменитости</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Знаменитости</h1>
+    <label id="region" for="region">Выберите регион: </label>
+    <select id="region">
+      <option value="world">Мир</option>
+      <option value="europe">Европа</option>
+      <option value="latvia">Латвия</option>
+    </select>
+  </header>
+
+  <section>
+    <div id="world">
+      <h2>Мир</h2>
+      <div class="celebrity-card">
+        <img src="celebrity1.jpg" alt="Знаменитость 1">
+        <h3>Знаменитость 1</h3>
+        <p>Биография знаменитости 1.</p>
+      </div>
+      <div class="celebrity-card">
+        <img src="celebrity2.jpg" alt="Знаменитость 2">
+        <h3>Знаменитость 2</h3>
+        <p>Биография знаменитости 2.</p>
+      </div>
+    </div>
+
+    <div id="europe" style="display: none;">
+      <h2>Европа</h2>
+      <div class="celebrity-card">
+        <img src="celebrity3.jpg" alt="Знаменитость 3">
+        <h3>Знаменитость 3</h3>
+        <p>Биография знаменитости 3.</p>
+      </div>
+      <div class="celebrity-card">
+        <img src="celebrity4.jpg" alt="Знаменитость 4">
+        <h3>Знаменитость 4</h3>
+        <p>Биография знаменитости 4.</p>
+      </div>
+    </div>
+
+    <div id="latvia" style="display: none;">
+      <h2>Латвия</h2>
+      <div class="celebrity-card">
+        <img src="celebrity5.jpg" alt="Знаменитость 5">
+        <h3>Знаменитость 5</h3>
+        <p>Биография знаменитости 5.</p>
+      </div>
+      <div class="celebrity-card">
+        <img src="celebrity6.jpg" alt="Знаменитость 6">
+        <h3>Знаменитость 6</h3>
+        <p>Биография знаменитости 6.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('region').addEventListener('change', function() {
+      var selectedRegion = this.value;
+      document.getElementById('world').style.display = 'none';
+      document.getElementById('europe').style.display = 'none';
+      document.getElementById('latvia').style.display = 'none';
+      document.getElementById(selectedRegion).style.display = 'block';
+    });
+  </script>
+</body>
+</html>
